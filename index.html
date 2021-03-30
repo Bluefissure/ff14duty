@@ -24,6 +24,7 @@
                 <ul>
                   <li>进本后会显示对应副本攻略。</li>
                   <li>通过 /e duty 命令手动开关悬浮窗。</li>
+                  <li><a onClick="loadDutyPage()" href="#">进本前查看副本攻略</a>。</li>
                 </ul>
             </div>
         </div>
@@ -440,6 +441,14 @@
             displayOrHideOverlay();
         });
         startOverlayEvents();
+
+
+        function loadDutyPage(){
+            let iframe = document.getElementById('iframe');
+            let info = document.getElementById('info');
+            info.style.visibility = 'hidden';
+            iframe.src = "https://ff14.org/duty/";
+        }
 
         function displayOrHideOverlay() {
             let div = document.getElementById('div');
